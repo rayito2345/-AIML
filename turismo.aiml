@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>HABLAME DE</pattern>
+    <template>
+    <think><set name="eso"><star/></set></think>
+    Aqui tiene informacion sobre <br/>
+    <formal>
+    <star/>
+    </formal>
+    
+    <button>
+        <text>Pulse aqui</text>
+        <url>http://es.wikipedia.org/wiki/<star/></url>
+    </button>
+    
+    </template>
+    </category>
+    
+    <category>
+        <patern>CUENTAME SOBRE ESE LUGAR</patern>
+        <template>
+            <condition name="eso">
+                <li value="*"><srai>hablame de<get name="eso"/></srai></li>
+                <li>Que te hable de ese lugar?</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <that>Que te hable de que lugar</that>
+        <template>
+            <srai>hablame de<star/></srai>
+        </template>
+    </category>
+    <!-- categorias con contexto referentes con localizaciones-->
+        <category>
+            <pattern>MUESTRAME EL MAPA DE *</pattern>
+            <template>
+                <think><set name="lugar"></set><star/></set></think>
+                Aqui tiene el mapa de <br/>
+                <formal>
+                    <star/>
+                    </formal>
+                    
+                    <button>
+                        <text>Pulse aqui</text>
+                        <url>https://www.google.com/maps?q=<star/></url>
+                    </button>
+                </tempate>
+          </category>
+          
+          <category>
+              <pattern>MUESTREME EL MAPA DE ESE LUGAR</pattern>
+              <template>
+                  <condition name="lugar">
+                      <li value="*"><srai>Muestrame el mapa de <get name="lugar"/></srai>></li>
+                      <li>Que muestre el mapa de donde?</li>
+                      </condition>
+              </template>
+              </category>
+              
+             <category>
+                 <pattern>*</pattern>
+                 <that>QUE MUESTRE EL MAPA DE DONDE</that>
+                 <template>
+                     <srai>muestrame el mapa de <star/></srai>
+                 </template>
+             </category>
+             <!-- categorias con contexto referentes con localizaciones-->
+             <category>
+                 <pattern>QUE TIEMPO HACE EN</pattern>
+                 <template>
+                     <think><set name="tiempo"<star/></set></think>
+                     Aqui tienes la previsión meteorologica de <br/>
+                     <formal>
+                         <star/>
+                     </formal>
+                     <button>
+                         <text>Pulse aqui</text>
+                         <url>https://es.weather forecast.com/locations/<star/>/forecasts/latest</url>
+                     </button>
+                    </template>
+                 </category>
+                 <category>
+                     <pattern>QUE CLIMA TIENE</pattern>
+                     <template>
+                         <condition name="tirmpo">
+                             <li value="*"><srai>Que tiempo hace en<get name="tiempo"/></srai></li>
+                             <li>El tiempo de donde?</li>
+                         </condition>
+                     </template>
+                 </category>
+                 <pattern>*</pattern>
+                 <that>EL TIEMPO DE DONDE</that>
+                 <template>
+                     <srai>que tiempo hace en<star/></srai>
+                 </template>
+                </category>
+              
+               </aiml>
+                 
+                 
+                 
+                     
+                     
+                     
+            
+             
+              
+              
+    
+    
