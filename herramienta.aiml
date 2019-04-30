@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>CUENTAME DE </pattern>
+    <template>
+    <think><set name="eso"><star/></set></think>
+    Aqui tiene informacion sobre <br/>
+    <formal>
+    <star/>
+    </formal>
+    
+    <button>
+        <text>Pulse aqui</text>
+        <url>http://es.wikipedia.org/wiki/<star/></url>
+    </button>
+    
+    </template>
+    </category>
+    
+    <category>
+        <patern>CUENTAME SOBRE ESE MATERIAL</patern>
+        <template>
+            <condition name="eso">
+                <li value="*"><srai>hablame de<get name="eso"/></srai></li>
+                <li>Que te hable de ese material?</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <that>Que te hable de que material</that>
+        <template>
+            <srai>hablame de<star/></srai>
+        </template>
+    </category>
+    </aiml>
+    
